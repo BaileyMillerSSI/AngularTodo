@@ -29,7 +29,7 @@ export class AllTasksComponent implements OnInit {
 
   AddNew(): void
   { 
-    var title = prompt("Please enter title");
+    var title = prompt("Please enter a title");
     if (title != null)
     { 
       TodoItem.CreateItem(title);
