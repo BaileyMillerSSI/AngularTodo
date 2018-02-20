@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { StorageService } from './services/storage.service';
+import { TodoItem } from './models/todo-item';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  
+  constructor(private _Storage: StorageService)
+  {
+    
+  }
 }
