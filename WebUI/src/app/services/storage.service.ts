@@ -16,10 +16,15 @@ export class StorageService {
 
   private Configure()
   { 
-    window.addEventListener('storage', () => { this.StorageChangedEvent.next(); console.log("Storage Changed!") });
+    window.addEventListener('storage', () => { this.PushChange(); console.log("Storage Changed!") });
     this.OnStorageChanged = this.StorageChangedEvent.asObservable();
   }
 
+  public PushChange(): void
+  { 
+    this.StorageChangedEvent.next();
+  }
+  
   HasItems(): boolean
   { 
     return this.GetAll().length > 0;

@@ -71,6 +71,7 @@ export class TodoItem
     { 
         // Just reload this item into localStorage
         localStorage.setItem(this.GetKey(), JSON.stringify(this));
+        
     }
 
     public Delete(): void
