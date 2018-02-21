@@ -1,5 +1,5 @@
 <div>
-  <input type="button" value="Add New Item" (click)="AddNew()"/>
+  <input type="button" value="Add New" (click)="AddNew()"/>
   <input type="button" value="Remove All" (click)="RemoveAll()" [disabled]="!_storage.HasItems()"/>
   <ul>
     <li *ngFor="let item of AllItems()" (click)="item.Delete()">{{item.GetTitle()}}</li>
