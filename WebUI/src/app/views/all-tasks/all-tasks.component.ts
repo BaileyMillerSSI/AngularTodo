@@ -14,7 +14,13 @@ export class AllTasksComponent implements OnInit {
     
   }
 
-  ngOnInit() {
+  ngOnInit() 
+  {
+    this._storage.OnStorageChanged.subscribe(() =>
+    {
+      // Refresh the UI
+      this.AllItems();
+    });
   }
 
   AllItems(): TodoItem[]

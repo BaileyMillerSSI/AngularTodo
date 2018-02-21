@@ -1,12 +1,23 @@
-import { Injectable } from '@angular/core';
+import { Injectable, HostListener } from '@angular/core';
 import { TodoItem } from '../models/todo-item';
+
+import { Subject, Observable } from "rxjs";
 
 @Injectable()
 export class StorageService {
 
+  private StorageChangedEvent = new Subject();
+  public OnStorageChanged: Observable<{}>;
+
   constructor()
   {
+    this.Configure();
+  }
 
+  private Configure()
+  { 
+    window.addEventListener('storage', () => { this.StorageChangedEvent.next(); console.log("Storage Changed!") });
+    this.OnStorageChanged = this.StorageChangedEvent.asObservable();
   }
 
   HasItems(): boolean
