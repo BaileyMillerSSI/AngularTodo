@@ -8,7 +8,8 @@
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "deploy-github": "ng build --target=production --environment=prod --output-path=../docs --base-href https://baileymillerssi.github.io/AngularTodo/"
   },
   "private": true,
   "dependencies": {
